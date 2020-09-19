@@ -68,6 +68,6 @@ def scrape():
         }
         hemispheres_list.append(hemis_dict)
         #Assemble Master Dictionary
-        dict_of_dict = {"article_info":news_article,"featured_image":featured_image,"hemispheres":hemispheres_list}
+        mars_intel = {"article_info":news_article,"featured_image":featured_image,"hemispheres":hemispheres_list}
 
-        return dict_of_dict
+        return mars_intel
