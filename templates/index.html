@@ -5,10 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Hot Finds</title>
+  <title>MARS</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
   <div class="header">
+      <h1>M - A - R - S, Mars, bitches.</h1>
       Mission to Mars
       Button Placeholder
   </div>
@@ -16,23 +17,31 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <h1>Latest Mars News</h1>
-            {{mars_intel.article_info}}
+            <h2>{{mars.article_info["article_title"]}}</h2>
+            <h3>{{mars.article_info["article_descrip"]}}</h3>
         </div>
         <div class="row">
             <div class="col-md-7">
-                <img class="img float-left" src={{mars_intel.featured_image}} alt="Featured Image">
+                <img class="img float-left" src="{{mars.featured_image['featured_img_url']}}" alt="Featured Image" width="100%">
             </div>
             <div class="col-md-5">
-                <img class="img float-left" src="mars_facts_table.html" alt="Featured Image">
+                {% autoescape false %}
+                {{mars.facts_table['table_code']}}
+                {% endautoescape %}
+                <script src="mars_facts_table.html"></script>
             </div>
         </div>
         <div class="row">
-            <div class="card">
-                hemispheres placeholder
+            {% for i in range(4) %}
+            <div class="col-md-6" id="">
+                <div class="card">
+                    <h1>{{mars.hemispheres[i]['hemi_title']}}</h1>
+                </div>
             </div>
+            {% endfor %}
         </div>
     </div>
 </body>
