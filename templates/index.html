@@ -7,18 +7,14 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>MARS</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<!--<link rel="stylesheet" type="text/css" href="static/style.css">-->
-
-  <div class="header">
-      <h1>M - A - R - S, Mars, bitches.</h1>
-      Mission to Mars
-      Button Placeholder
-  </div>
-
 </head>
 
 <body>
     <div class="container-fluid">
+        <div class="jumbotron text-center">
+            <h1>Mission to Mars</h1>
+            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Refresh Data</a></p>
+        </div>
         <div class="row">
             <h1>Latest Mars News</h1>
             <h2>{{mars.article_info["article_title"]}}</h2>
@@ -42,12 +38,21 @@
             <hr>
             {% for i in range(4) %}
             <div class="col-md-6" id="hemi_card">
-                <div class="card">
-                    <img src="{{mars.hemispheres[i]['hemi_img_url']}}" width="50%">
-                    <h1>{{mars.hemispheres[i]['hemi_title']}}</h1>
+                <div class="card" style="width:100%;">
+                    <img class="card-img-top" src="{{mars.hemispheres[i]['hemi_img_url']}}" width="50%">
+                    <div class="card-body">
+                        <h2 class="card-title">{{mars.hemispheres[i]['hemi_title']}}</h2>
+                    </div>
                 </div>
             </div>
             {% endfor %}
         </div>
     </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </body>
+
+</html>
