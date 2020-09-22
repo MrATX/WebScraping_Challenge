@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>MARS</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!--<link rel="stylesheet" type="text/css" href="static/style.css">-->
 
   <div class="header">
       <h1>M - A - R - S, Mars, bitches.</h1>
@@ -34,10 +35,15 @@
                 <script src="mars_facts_table.html"></script>
             </div>
         </div>
-        <div class="row">
+        <div class="row" id="hemi-row">
+            <div class="header">
+                <h2>Mars Hemispheres</h2>
+            </div>
+            <hr>
             {% for i in range(4) %}
-            <div class="col-md-6" id="">
+            <div class="col-md-6" id="hemi_card">
                 <div class="card">
+                    <img src="{{mars.hemispheres[i]['hemi_img_url']}}" width="50%">
                     <h1>{{mars.hemispheres[i]['hemi_title']}}</h1>
                 </div>
             </div>
