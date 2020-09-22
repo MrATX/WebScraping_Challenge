@@ -2,11 +2,12 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>MARS</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MARS</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}"/>
 </head>
 
 <body>
@@ -15,19 +16,18 @@
             <h1>Mission to Mars</h1>
             <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Refresh Data</a></p>
         </div>
-        <div class="row">
+        <div class="row newsrow">
             <h1>Latest Mars News</h1>
-            <h2>{{mars.article_info["article_title"]}}</h2>
-            <h3>{{mars.article_info["article_descrip"]}}</h3>
+            <strong>{{mars.article_info["article_title"]}}</strong>
+            <p>{{mars.article_info["article_descrip"]}}</p>
         </div>
-        <div class="row">
+        <div class="row text-center">
             <div class="col-md-7">
                 <img class="img float-left" src="{{mars.featured_image['featured_img_url']}}" alt="Featured Image" width="100%">
             </div>
             <div class="col-md-5">
-                {% autoescape false %}
-                {{mars.facts_table['table_code']}}
-                {% endautoescape %}
+                <h3>Mars Facts</h3>
+                {{mars.facts_table['table_code'] | safe}}
                 <script src="mars_facts_table.html"></script>
             </div>
         </div>
@@ -37,11 +37,11 @@
             </div>
             <hr>
             {% for i in range(4) %}
-            <div class="col-md-6" id="hemi_card">
-                <div class="card" style="width:100%;">
-                    <img class="card-img-top" src="{{mars.hemispheres[i]['hemi_img_url']}}" width="50%">
+            <div class="col-md-6 justify-content-center">
+                <div class="card" style="width:50%;">
+                    <img class="card-img-top" src="{{mars.hemispheres[i]['hemi_img_url']}}" width="100%">
                     <div class="card-body">
-                        <h2 class="card-title">{{mars.hemispheres[i]['hemi_title']}}</h2>
+                        <h3 class="card-title" id="ipwn">{{mars.hemispheres[i]['hemi_title']}}</h3>
                     </div>
                 </div>
             </div>

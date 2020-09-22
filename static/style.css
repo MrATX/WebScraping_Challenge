@@ -1,3 +1,40 @@
 .container-fluid{
-    background-color:black;
+    background-color:white;
+    justify-content:center;
+}
+
+#hemi-card{
+    align-self: center;
+}
+
+#ipwn{
+    color:maroon;
+}
+
+.hemi-col{
+    display: flex;
+}
+
+
+
+.newsrow{
+    margin: 25px;
+}
+
+.card{
+    border-style:solid;
+    border-color: black;
+    align-self: center;
+}
+
+.card-img-top{
+    justify-content: center;
+}
+
+.card-body{
+    justify-content: center;
+}
+
+.h2{
+    text-align: left;
 }
