@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <title>NASA Web Scrape</title>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="indexStatic/css/style.css">
+
+      <!--NAVBAR--------------------------------------------------------navbar-light bg-light------------->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#" style="color:maroon;">JLW</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="https://mratx.github.io/index.html" id="navolink">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://mratx.github.io/projects.html" id="navolink"><u>Projects</u></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://mratx.github.io/resume.html" id="navolink">Resume</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:teal;">
+                Connect
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="https://linkedin.com/in/john-whitaker-austin/" target="_blank">LinkedIn</a>
+                <a class="dropdown-item" href="https://github.com/MrATX" target="_blank">GitHub</a>
+              </div>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <h4 style="color:maroon">iPwn</h4>
+          </form>
+        </div>
+      </nav>
+    <!--NAVBAR END------------------------------------------------------------------->
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6" id="repolink">
+    <a href="https://github.com/MrATX/WebScraping_Challenge" target="_blank" id="repolink">
+      <h4>Visit the Github repo to see the full project & code</h4>
+    </a>
+  </div>
+  <div class="col-md-3"></div>
+</div>
+
+</head>
+<body style="background-color:lightgray;">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="jumbotron">
+            <h1 id="index-title"><center>NASA Web Scrape & App Generation</center></h1>
+            <hr>
+            <p id="analysispara">
+                Mars is one of the most exciting sources of astronomical intrigue to the world;
+                another planet so close we can see it in the night sky, and yet the red planet still
+                holds more mysteries than answers. As such, it is a constant topic of study for NASA.
+                To learn more about Mars and practice coding skills, I built a web scraping tool
+                with BeautifulSoup to retrieve information from NASA's Mars webpage, populate a MongoDB
+                with the scraped data, and host the information in a custom Flask application.
+                The Flask app was hosted locally and screenshots of the final applcation are included
+                below with explanations.
+            </p>
+            <hr>
+            <div class="row">
+                <div class = "col-md-4">
+                    <p id="analysispara">
+                        Live data from the internet is much more useful if it can be updated dynamically, and
+                        as such, the first piece on the Flask application is the large button at the top of the page,
+                        which will actively refresh the data from NASA's webpage. The first pieces of data gathered
+                        are The Title and Headline of NASA's featured Mars article, their featured image of the day,
+                        and a table of statistical facts about the red planet.
+                    </p>
+                </div>
+                <div class="col-md-8">
+                    <img id="screen" src="app_screen_1.png" alt="Figure1" style="width:100%;">
+                </div>
+            </div>
+            <div class="row">
+                <div class = "col-md-4">
+                    <p id="analysispara">
+                        The next piece of information to be gathered was URLs for images of each
+                        of Mars' hemispheres. However, the URLs featured on the main page were of
+                        low resolution and a function within the Web Scraping tool was written to click on
+                        each image and extract the URL for it's full-resolution image from the
+                        subsequent page. It then would reroute to the previous page, and continue the
+                        process for each hemisphere.
+                    </p>
+                </div>
+                <div class="col-md-8">
+                    <img id="screen" src="app_screen_2.png" alt="Figure1" style="width:100%;">
+                </div>
+            </div>
+            <div class="row">
+                <div class = "col-md-4">
+                    <p id="analysispara">
+                        The tail end of the Flask application featuring the full resolution images for
+                        the last two hemispheres.
+                    </p>
+                </div>
+                <div class="col-md-8">
+                    <img id="screen" src="app_screen_3.png" alt="Figure1" style="width:100%;">
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
